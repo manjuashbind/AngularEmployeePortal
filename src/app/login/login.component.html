@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col my-5">
+            <img class="img-fluid" src="https://www.sme-news.co.uk/wp-content/uploads/2021/11/Login.jpg" alt="">
+        </div>
+        <div class="col my-5">
+            <h3 class="text-center">Login Here....</h3><br>
+            <form action="">
+                <!-- {{email}} {{password}} -->
+                <input type="text" name="email" [(ngModel)]="email" #userEmail="ngModel" placeholder="Email Address" required email class="form-control mb-3">
+                <div *ngIf="userEmail.invalid  && userEmail.touched" class="text-danger">*Invalid Email</div><br>
+                <input type="password" name="password" [(ngModel)]="password" placeholder="Password" #userPassword="ngModel" required pattern="[a-zA-Z0-9]*" class="form-control mb-3">
+                <div *ngIf="userPassword.invalid  && userPassword.touched" class="text-danger">*Invalid Password</div><br>
+                <div class="text-center">
+                    <button class="btn btn-success">Sign In</button>
+                </div>
+                
+            </form>
+
+
+        </div>
+    </div>
+</div>
